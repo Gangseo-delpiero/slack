@@ -1,3 +1,19 @@
 #!/bin/bash
 echo 'Hello World'
+post  {
+    success {
+        slackSend (
+            channel: 'ipsinyangmyeong-jenkins',          
+            color: '#00ff00',        
+            message: "success"
+        )
+    }
+    failure {
+        slackSend (
+            channel: 'ipsinyangmyeong-jenkins',
+            color: '#ff0000',
+            message: "fail"
+        )
+    }
+}
 
